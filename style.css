@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --dark-color: #4A4E69;
+    --medium-dark-color: #8E9AAF;
+    --dark-pink: #CBC0D3;
+    --light-pink: #FEEAFA;
+    --light-color: #EFF1FF;
+
+    --title-font: 'Staatliches', cursive;
+}
+
+
+
+header {
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--medium-dark-color);
+    padding: 3rem 0;
+    width: 100%;
+}
+
+header img {
+    margin-bottom: 3.2rem ;
+}
+
+header .banner {
+    width: 100%;
+    background-color: var(--dark-pink);
+    margin: 0 auto;
+    text-align: center;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.banner h1 {
+    font-family: var(--title-font);
+    font-weight: normal;
+    color: #FFF;
+    font-size: 4rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.1em;
+    padding: 8px auto;
+    text-shadow: 0 2px 2px 0 #000 25%;
+}
+
+.page {
+    background-color: var(--light-color);
+    padding: 14px 32px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.page p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-family: 'Palanquin', sans-serif;
+    color: #23053A;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.category {
+    max-width: 32rem;
+    position: relative;
+    animation-name: downtop;
+    animation-duration: 500ms;
+    transition: all 300ms;
+}
+
+.category:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.category img {
+    max-width: 32rem;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.category h2{
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
+    line-height: 3.4rem;
+    letter-spacing: 5px;
+    font-weight: normal;
+    color: var(--dark-color);
+    background-color: var(--light-pink);
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    animation-name: topdown;
+    animation-duration: 500ms;
+    animation-delay: 300ms;
+    animation-fill-mode: backwards;
+}
+
+@keyframes topdown {
+    0%{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 690px){
+    .page p {
+        width: 75%;
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+    }
+}
+
+@media (min-width: 1000px){
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.2rem;
+    }
+}
+
